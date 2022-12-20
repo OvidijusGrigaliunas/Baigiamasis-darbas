@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if current_user %}
+        <h1>Current user: {{ current_user }}</h1>
+
+        <table>
+            <tr>
+                <th>Category</th>
+                <th>Value</th>
+                <th>Date</th>
+            </tr>
+            {% for record in records %}
+                <tr>
+                    <td>{{ record.category.category_name }}</td>
+                    <td>{{ record.record_value }}</td>
+                    <td>{{ record.record_date }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+</head>
+<body>
+
+</body>
+</html>
